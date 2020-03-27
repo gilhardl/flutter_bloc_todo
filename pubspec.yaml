@@ -8,14 +8,18 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
   cupertino_icons: ^0.1.2
   uuid: ^2.0.4
   equatable: ^1.0.0
   flutter_bloc: ^3.2.0
+  path_provider: ^1.6.5
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  intl_translation: ^0.17.9
 
 flutter:
   uses-material-design: true

@@ -8,7 +8,7 @@ import 'todos_event.dart';
 import 'todos_state.dart';
 
 class TodosBloc extends Bloc<TodosEvent, TodosState> {
-  final TodosRepositoryFlutter todosRepository;
+  final TodosRepository todosRepository;
 
   TodosBloc({@required this.todosRepository});
 

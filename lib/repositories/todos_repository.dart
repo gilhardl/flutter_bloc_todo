@@ -6,11 +6,11 @@ import 'package:bloc_todo/models/todo_entity.dart';
 import 'package:bloc_todo/providers/web_client.dart';
 import 'package:bloc_todo/providers/file_storage.dart';
 
-class TodosRepositoryFlutter {
+class TodosRepository {
   final FileStorage fileStorage;
   final WebClient webClient;
 
-  TodosRepositoryFlutter({
+  const TodosRepository({
     @required this.fileStorage,
     this.webClient = const WebClient(),
   });

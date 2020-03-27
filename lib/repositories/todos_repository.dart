@@ -1,11 +1,10 @@
 import 'dart:async';
 import 'dart:core';
-import 'package:bloc_todo/providers/web_client.dart';
 import 'package:meta/meta.dart';
 
+import 'package:bloc_todo/models/todo_entity.dart';
+import 'package:bloc_todo/providers/web_client.dart';
 import 'package:bloc_todo/providers/file_storage.dart';
-
-import 'todo_entity.dart';
 
 class TodosRepositoryFlutter {
   final FileStorage fileStorage;

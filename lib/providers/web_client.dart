@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:bloc_todo/repositories/todos/todo_entity.dart';
+import 'package:bloc_todo/models/todo_entity.dart';
 
 class WebClient {
   final Duration delay;

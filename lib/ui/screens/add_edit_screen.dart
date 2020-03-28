@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'package:bloc_todo/localization.dart';
-import 'package:bloc_todo/keys.dart';
-import 'package:bloc_todo/models/todo.dart';
+import 'package:bloc_todo/ui/localization.dart';
+import 'package:bloc_todo/ui/keys.dart';
+import 'package:bloc_todo/data/models/todo.dart';
 
 typedef OnSaveCallback = Function(String task, String note);
 

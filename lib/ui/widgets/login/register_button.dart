@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:bloc_todo/repositories/auth_repository.dart';
+import 'package:bloc_todo/data/repositories/auth_repository.dart';
 
 import 'package:bloc_todo/ui/screens/register_screen.dart';
 

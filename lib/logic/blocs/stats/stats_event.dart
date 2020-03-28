@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 
-import 'package:bloc_todo/models/todo.dart';
+import 'package:bloc_todo/data/models/todo.dart';
 
 abstract class StatsEvent extends Equatable {
   const StatsEvent();

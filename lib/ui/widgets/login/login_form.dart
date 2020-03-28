@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:bloc_todo/repositories/auth_repository.dart';
-import 'package:bloc_todo/blocs/auth.dart';
-import 'package:bloc_todo/blocs/login.dart';
+import 'package:bloc_todo/data/repositories/auth_repository.dart';
+
+import 'package:bloc_todo/logic/blocs/auth.dart';
+import 'package:bloc_todo/logic/blocs/login.dart';
 
 import 'package:bloc_todo/ui/widgets/login/google_login_button.dart';
 import 'package:bloc_todo/ui/widgets/login/register_button.dart';

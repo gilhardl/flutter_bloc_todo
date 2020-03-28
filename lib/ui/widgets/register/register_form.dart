@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:bloc_todo/blocs/auth.dart';
-import 'package:bloc_todo/blocs/register.dart';
+import 'package:bloc_todo/logic/blocs/auth.dart';
+import 'package:bloc_todo/logic/blocs/register.dart';
 
 import 'package:bloc_todo/ui/widgets/register/register_button.dart';
 

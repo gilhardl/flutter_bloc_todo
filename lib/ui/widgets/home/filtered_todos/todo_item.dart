@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:bloc_todo/keys.dart';
-import 'package:bloc_todo/models/todo.dart';
+import 'package:bloc_todo/ui/keys.dart';
+import 'package:bloc_todo/data/models/todo.dart';
 
 class TodoItem extends StatelessWidget {
   final DismissDirectionCallback onDismissed;

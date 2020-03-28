@@ -2,9 +2,9 @@ import 'dart:async';
 import 'dart:core';
 import 'package:meta/meta.dart';
 
-import 'package:bloc_todo/models/todo_entity.dart';
-import 'package:bloc_todo/providers/web_client.dart';
-import 'package:bloc_todo/providers/file_storage.dart';
+import 'package:bloc_todo/data/models/todo_entity.dart';
+import 'package:bloc_todo/data/providers/web_client.dart';
+import 'package:bloc_todo/data/providers/file_storage.dart';
 
 class TodosRepository {
   final FileStorage fileStorage;

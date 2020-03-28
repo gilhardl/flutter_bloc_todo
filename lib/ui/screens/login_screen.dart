@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:bloc_todo/repositories/auth_repository.dart';
-import 'package:bloc_todo/blocs/login/login_bloc.dart';
+import 'package:bloc_todo/data/repositories/auth_repository.dart';
+import 'package:bloc_todo/logic/blocs/login/login_bloc.dart';
 
 import 'package:bloc_todo/ui/widgets/login/login_form.dart';
 

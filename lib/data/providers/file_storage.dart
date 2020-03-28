@@ -2,7 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:bloc_todo/models/todo_entity.dart';
+import 'package:bloc_todo/data/models/todo_entity.dart';
 
 class FileStorage {
   final String tag;

@@ -3,8 +3,9 @@ import 'package:meta/meta.dart';
 import 'package:stream_transform/stream_transform.dart';
 import 'package:bloc/bloc.dart';
 
-import 'package:bloc_todo/validators.dart';
-import 'package:bloc_todo/repositories/auth_repository.dart';
+import 'package:bloc_todo/data/repositories/auth_repository.dart';
+
+import 'package:bloc_todo/logic/validators.dart';
 
 import 'register_event.dart';
 import 'register_state.dart';

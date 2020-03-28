@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 
-import 'package:bloc_todo/models/app_tab.dart';
+import 'package:bloc_todo/data/models/app_tab.dart';
 
 import 'app_tab_event.dart';
 

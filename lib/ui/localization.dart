@@ -1,34 +1,8 @@
 import 'dart:async';
-import 'package:bloc_todo/l10n/messages_all.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-//import 'localizations/messages_all.dart';
-
-//class BlocTodoLocalizations {
-//  static BlocTodoLocalizations of(BuildContext context) {
-//    return Localizations.of<BlocTodoLocalizations>(
-//      context,
-//      BlocTodoLocalizations,
-//    );
-//  }
-//
-//  String get appTitle => "Flutter Todos";
-//}
-//
-//class BlocTodoLocalizationsDelegate
-//    extends LocalizationsDelegate<BlocTodoLocalizations> {
-//  @override
-//  Future<BlocTodoLocalizations> load(Locale locale) =>
-//      Future(() => BlocTodoLocalizations());
-//
-//  @override
-//  bool shouldReload(BlocTodoLocalizationsDelegate old) => false;
-//
-//  @override
-//  bool isSupported(Locale locale) =>
-//      locale.languageCode.toLowerCase().contains("en");
-//}
+import 'package:bloc_todo/ui/l10n/messages_all.dart';
 
 class BlocTodoLocalizations {
   BlocTodoLocalizations(this.locale);

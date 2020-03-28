@@ -2,21 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:path_provider/path_provider.dart';
 
-import 'package:bloc_todo/localization.dart';
-import 'package:bloc_todo/keys.dart';
-import 'package:bloc_todo/routes.dart';
-import 'package:bloc_todo/models/todo.dart';
+import 'package:bloc_todo/ui/localization.dart';
+import 'package:bloc_todo/data/models/todo.dart';
 
-import 'package:bloc_todo/providers/file_storage.dart';
-import 'package:bloc_todo/repositories/auth_repository.dart';
-import 'package:bloc_todo/repositories/todos_repository.dart';
-import 'package:bloc_todo/blocs/app_bloc_delegate.dart';
-import 'package:bloc_todo/blocs/app_tab.dart';
-import 'package:bloc_todo/blocs/auth.dart';
-import 'package:bloc_todo/blocs/todos.dart';
-import 'package:bloc_todo/blocs/filtered_todos.dart';
-import 'package:bloc_todo/blocs/stats.dart';
+import 'package:bloc_todo/data/providers/file_storage.dart';
+import 'package:bloc_todo/data/repositories/auth_repository.dart';
+import 'package:bloc_todo/data/repositories/todos_repository.dart';
 
+import 'package:bloc_todo/logic/routes.dart';
+import 'package:bloc_todo/logic/blocs/app_bloc_delegate.dart';
+import 'package:bloc_todo/logic/blocs/app_tab.dart';
+import 'package:bloc_todo/logic/blocs/auth.dart';
+import 'package:bloc_todo/logic/blocs/todos.dart';
+import 'package:bloc_todo/logic/blocs/filtered_todos.dart';
+import 'package:bloc_todo/logic/blocs/stats.dart';
+
+import 'package:bloc_todo/ui/keys.dart';
 import 'package:bloc_todo/ui/screens/login_screen.dart';
 import 'package:bloc_todo/ui/screens/home_screen.dart';
 import 'package:bloc_todo/ui/screens/add_edit_screen.dart';

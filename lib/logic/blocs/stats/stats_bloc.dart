@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:meta/meta.dart';
 import 'package:bloc/bloc.dart';
 
-import 'package:bloc_todo/blocs/todos.dart';
+import 'package:bloc_todo/logic/blocs/todos.dart';
 
 import 'stats_event.dart';
 import 'stats_state.dart';

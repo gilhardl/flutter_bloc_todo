@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:bloc_todo/main.dart';
-import 'package:bloc_todo/repositories/auth_repository.dart';
+import 'package:bloc_todo/data/repositories/auth_repository.dart';
 
 void main() {
   final AuthRepository authRepository = AuthRepository();

@@ -1,12 +1,14 @@
-import 'package:bloc_todo/blocs/auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:bloc_todo/localization.dart';
-import 'package:bloc_todo/keys.dart';
-import 'package:bloc_todo/routes.dart';
-import 'package:bloc_todo/models/app_tab.dart';
-import 'package:bloc_todo/blocs/app_tab.dart';
+import 'package:bloc_todo/ui/localization.dart';
+import 'package:bloc_todo/ui/keys.dart';
+
+import 'package:bloc_todo/data/models/app_tab.dart';
+
+import 'package:bloc_todo/logic/routes.dart';
+import 'package:bloc_todo/logic/blocs/auth.dart';
+import 'package:bloc_todo/logic/blocs/app_tab.dart';
 
 import 'package:bloc_todo/ui/widgets/home/extra_actions.dart';
 import 'package:bloc_todo/ui/widgets/home/filter_button.dart';

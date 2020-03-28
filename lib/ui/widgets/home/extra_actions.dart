@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:bloc_todo/localization.dart';
-import 'package:bloc_todo/keys.dart';
-import 'package:bloc_todo/models/extra_action.dart';
-import 'package:bloc_todo/blocs/todos.dart';
+import 'package:bloc_todo/ui/localization.dart';
+import 'package:bloc_todo/ui/keys.dart';
+
+import 'package:bloc_todo/data/models/extra_action.dart';
+
+import 'package:bloc_todo/logic/blocs/todos.dart';
 
 class ExtraActions extends StatelessWidget {
   ExtraActions({Key key}) : super(key: Keys.extraActionsButton);

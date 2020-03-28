@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:bloc_todo/localization.dart';
-import 'package:bloc_todo/keys.dart';
-import 'package:bloc_todo/models/filter_visibility.dart';
-import 'package:bloc_todo/blocs/filtered_todos.dart';
+import 'package:bloc_todo/ui/localization.dart';
+import 'package:bloc_todo/ui/keys.dart';
+
+import 'package:bloc_todo/data/models/filter_visibility.dart';
+
+import 'package:bloc_todo/logic/blocs/filtered_todos.dart';
 
 class FilterButton extends StatelessWidget {
   final bool visible;

@@ -1,11 +1,10 @@
 import 'dart:async';
-import 'package:bloc_todo/models/todo.dart';
 import 'package:meta/meta.dart';
 import 'package:bloc/bloc.dart';
 
-import 'package:bloc_todo/models/filter_visibility.dart';
-import 'package:bloc_todo/blocs/todos/todos_bloc.dart';
-import 'package:bloc_todo/blocs/todos/todos_state.dart';
+import 'package:bloc_todo/data/models/todo.dart';
+import 'package:bloc_todo/data/models/filter_visibility.dart';
+import 'package:bloc_todo/logic/blocs/todos.dart';
 
 import 'filtered_todos_state.dart';
 import 'filtered_todos_event.dart';

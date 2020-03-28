@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:meta/meta.dart';
 import 'package:bloc/bloc.dart';
 
-import 'package:bloc_todo/repositories/auth_repository.dart';
+import 'package:bloc_todo/data/repositories/auth_repository.dart';
 
 import 'auth_event.dart';
 import 'auth_state.dart';

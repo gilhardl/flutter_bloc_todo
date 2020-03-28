@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:bloc_todo/localization.dart';
-import 'package:bloc_todo/keys.dart';
-import 'package:bloc_todo/blocs/filtered_todos.dart';
-import 'package:bloc_todo/blocs/todos.dart';
+import 'package:bloc_todo/ui/localization.dart';
+import 'package:bloc_todo/ui/keys.dart';
+import 'package:bloc_todo/logic/blocs/filtered_todos.dart';
+import 'package:bloc_todo/logic/blocs/todos.dart';
 
 import 'package:bloc_todo/ui/screens/details_screen.dart';
 import 'package:bloc_todo/ui/widgets/loading_indicator.dart';

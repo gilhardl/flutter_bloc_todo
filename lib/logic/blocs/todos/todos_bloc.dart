@@ -1,8 +1,8 @@
 import 'package:meta/meta.dart';
 import 'package:bloc/bloc.dart';
 
-import 'package:bloc_todo/repositories/todos_repository.dart';
-import 'package:bloc_todo/models/todo.dart';
+import 'package:bloc_todo/data/repositories/todos_repository.dart';
+import 'package:bloc_todo/data/models/todo.dart';
 
 import 'todos_event.dart';
 import 'todos_state.dart';

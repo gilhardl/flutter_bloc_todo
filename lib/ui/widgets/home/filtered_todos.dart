@@ -8,8 +8,8 @@ import 'package:bloc_todo/blocs/todos.dart';
 
 import 'package:bloc_todo/ui/screens/details_screen.dart';
 import 'package:bloc_todo/ui/widgets/loading_indicator.dart';
-import 'package:bloc_todo/ui/widgets/delete_todo_snackbar.dart';
-import 'package:bloc_todo/ui/widgets/todo_item.dart';
+import 'package:bloc_todo/ui/widgets/home/filtered_todos/delete_todo_snackbar.dart';
+import 'package:bloc_todo/ui/widgets/home/filtered_todos/todo_item.dart';
 
 class FilteredTodos extends StatelessWidget {
   FilteredTodos({Key key}) : super(key: key);
@@ -34,7 +34,7 @@ class FilteredTodos extends StatelessWidget {
                 onDismissed: (direction) {
                   BlocProvider.of<TodosBloc>(context).add(TodoDeleted(todo));
                   Scaffold.of(context).showSnackBar(DeleteTodoSnackBar(
-                    key: Keys.snackbar,
+                    key: Keys.snackbarAction('deleteTodo__${todo.id}'),
                     todo: todo,
                     onUndo: () => BlocProvider.of<TodosBloc>(context)
                         .add(TodoAdded(todo)),
@@ -49,7 +49,7 @@ class FilteredTodos extends StatelessWidget {
                   );
                   if (removedTodo != null) {
                     Scaffold.of(context).showSnackBar(DeleteTodoSnackBar(
-                      key: Keys.snackbar,
+                      key: Keys.snackbarAction('deleteTodo__${todo.id}'),
                       todo: todo,
                       onUndo: () => BlocProvider.of<TodosBloc>(context)
                           .add(TodoAdded(todo)),

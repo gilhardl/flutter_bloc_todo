@@ -9,11 +9,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:bloc_todo/main.dart';
+import 'package:bloc_todo/repositories/auth_repository.dart';
 
 void main() {
+  final AuthRepository authRepository = AuthRepository();
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(BlocTodoApp());
+    await tester.pumpWidget(BlocTodoApp(
+      authRepository: authRepository,
+    ));
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);

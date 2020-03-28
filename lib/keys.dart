@@ -4,8 +4,8 @@ class Keys {
   // Home Screens
   static final homeScreen = const Key('__homeScreen__');
   static final addTodoFab = const Key('__addTodoFab__');
-  static final snackbar = const Key('__snackbar__');
-//  static Key snackbarAction(String id) => Key('__snackbar_action_${id}__');
+//  static final snackbar = const Key('__snackbar__');
+  static Key snackbarAction(String id) => Key('__snackbar_action_${id}__');
 
   // Todos
   static final todoList = const Key('__todoList__');
@@ -39,12 +39,9 @@ class Keys {
       const Key('__filteredTodosEmptyContainer__');
 
   // Stats
-//  static final statsCounter = const Key('__statsCounter__');
-//  static final statsLoading = const Key('__statsLoading__');
   static final statsNumActive = const Key('__statsActiveItems__');
   static final statsNumCompleted = const Key('__statsCompletedItems__');
-  static final statsLoadInProgressIndicator =
-      const Key('__statsLoadInProgressIndicator__');
+  static final statsLoading = const Key('__statsLoading__');
   static final emptyStatsContainer = const Key('__emptyStatsContainer__');
 
   // Details Screen
@@ -53,7 +50,6 @@ class Keys {
   static final todoDetailsScreen = const Key('__todoDetailsScreen__');
   static final emptyDetailsContainer =
       const Key('__emptyDetailsContainer_/**/_');
-//  static final detailsScreenCheckBox = const Key('__detailsScreenCheckBox__');
   static final detailsTodoItemCheckbox = Key('DetailsTodo__Checkbox');
   static final detailsTodoItemTask = Key('DetailsTodo__Task');
   static final detailsTodoItemNote = Key('DetailsTodo__Note');

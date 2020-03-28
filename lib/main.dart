@@ -17,8 +17,9 @@ import 'package:bloc_todo/blocs/todos.dart';
 import 'package:bloc_todo/blocs/filtered_todos.dart';
 import 'package:bloc_todo/blocs/stats.dart';
 
-import 'package:bloc_todo/ui/screens/add_edit_screen.dart';
+import 'package:bloc_todo/ui/screens/login_screen.dart';
 import 'package:bloc_todo/ui/screens/home_screen.dart';
+import 'package:bloc_todo/ui/screens/add_edit_screen.dart';
 
 import 'ui/screens/splash_screen.dart';
 
@@ -92,6 +93,9 @@ class BlocTodoApp extends StatelessWidget {
                   child: HomeScreen(
                       key: Keys.homeScreen, userName: state.displayName),
                 );
+              }
+              if (state is Unauthenticated) {
+                return LoginScreen(authRepository: _authRepository);
               }
               return null;
             },

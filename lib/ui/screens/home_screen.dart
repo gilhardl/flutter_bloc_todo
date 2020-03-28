@@ -8,11 +8,11 @@ import 'package:bloc_todo/routes.dart';
 import 'package:bloc_todo/models/app_tab.dart';
 import 'package:bloc_todo/blocs/app_tab.dart';
 
-import 'package:bloc_todo/ui/widgets/extra_actions.dart';
-import 'package:bloc_todo/ui/widgets/filter_button.dart';
-import 'package:bloc_todo/ui/widgets/filtered_todos.dart';
-import 'package:bloc_todo/ui/widgets/stats.dart';
-import 'package:bloc_todo/ui/widgets/tab_selector.dart';
+import 'package:bloc_todo/ui/widgets/home/extra_actions.dart';
+import 'package:bloc_todo/ui/widgets/home/filter_button.dart';
+import 'package:bloc_todo/ui/widgets/home/filtered_todos.dart';
+import 'package:bloc_todo/ui/widgets/home/stats.dart';
+import 'package:bloc_todo/ui/widgets/home/tab_selector.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({Key key, this.userName}) : super(key: key ?? Keys.homeScreen);

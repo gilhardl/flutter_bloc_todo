@@ -63,6 +63,9 @@ class BlocTodoApp extends StatelessWidget {
     return MaterialApp(
       title:
           BlocTodoLocalizations(Locale.fromSubtags(countryCode: 'en')).appTitle,
+      theme: ThemeData.light().copyWith(
+        scaffoldBackgroundColor: Color(0xFFEBEBEB),
+      ),
       localizationsDelegates: [
         BlocTodoLocalizationsDelegate(),
         BlocTodoLocalizationsDelegate(),

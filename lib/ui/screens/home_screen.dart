@@ -1,3 +1,4 @@
+import 'package:bloc_todo/blocs/auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -14,7 +15,9 @@ import 'package:bloc_todo/ui/widgets/stats.dart';
 import 'package:bloc_todo/ui/widgets/tab_selector.dart';
 
 class HomeScreen extends StatelessWidget {
-  HomeScreen({Key key}) : super(key: key ?? Keys.homeScreen);
+  HomeScreen({Key key, this.userName}) : super(key: key ?? Keys.homeScreen);
+
+  final String userName;
 
   @override
   Widget build(BuildContext context) {
@@ -22,10 +25,17 @@ class HomeScreen extends StatelessWidget {
       builder: (context, activeTab) {
         return Scaffold(
           appBar: AppBar(
-            title: Text('BLoC Todo'),
+            title: Text(
+                '${BlocTodoLocalizations.of(context).appTitle} - $userName'),
             actions: [
               FilterButton(visible: activeTab == AppTab.todos),
               ExtraActions(),
+              IconButton(
+                icon: Icon(Icons.exit_to_app),
+                onPressed: () {
+                  BlocProvider.of<AuthBloc>(context).add(LoggedOut());
+                },
+              )
             ],
           ),
           body: activeTab == AppTab.todos ? FilteredTodos() : Stats(),

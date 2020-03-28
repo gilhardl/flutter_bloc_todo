@@ -1,4 +1,5 @@
 class Routes {
-  static final home = "/";
-  static final addTodo = "/addTodo";
+//  static final splash = '/';
+  static final home = '/';
+  static final addTodo = '/addTodo';
 }

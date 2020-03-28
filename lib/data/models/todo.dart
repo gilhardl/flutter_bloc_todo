@@ -1,4 +1,3 @@
-import 'package:uuid/uuid.dart';
 import 'package:equatable/equatable.dart';
 
 import 'package:bloc_todo/data/models/todo_entity.dart';
@@ -11,13 +10,12 @@ class Todo extends Equatable {
 
   Todo(
     this.task, {
-    String id,
+    this.id,
     String note,
     this.complete = false,
-  })  : this.note = note ?? '',
-        this.id = id ?? Uuid().v4();
+  }) : this.note = note ?? '';
 
-  Todo copyWith({bool complete, String id, String note, String task}) {
+  Todo copyWith({String id, String task, String note, bool complete}) {
     return Todo(
       task ?? this.task,
       id: id ?? this.id,
@@ -41,7 +39,7 @@ class Todo extends Equatable {
   static Todo fromEntity(TodoEntity entity) {
     return Todo(
       entity.task,
-      id: entity.id ?? Uuid().v4(),
+      id: entity.id,
       note: entity.note,
       complete: entity.complete ?? false,
     );

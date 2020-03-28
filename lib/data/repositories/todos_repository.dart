@@ -1,36 +1,41 @@
 import 'dart:async';
 import 'dart:core';
-import 'package:meta/meta.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 import 'package:bloc_todo/data/models/todo_entity.dart';
-import 'package:bloc_todo/data/providers/web_client.dart';
-import 'package:bloc_todo/data/providers/file_storage.dart';
+import 'package:bloc_todo/data/models/todo.dart';
 
 class TodosRepository {
-  final FileStorage fileStorage;
-  final WebClient webClient;
+  TodosRepository(String userId)
+      : assert(userId != null),
+        _todoCollection = Firestore.instance
+            .collection('users')
+            .document(userId)
+            .collection('todos');
 
-  const TodosRepository({
-    @required this.fileStorage,
-    this.webClient = const WebClient(),
-  });
+  final CollectionReference _todoCollection;
 
-  Future<List<TodoEntity>> loadTodos() async {
-    try {
-      return await fileStorage.loadTodos();
-    } catch (e) {
-      final todos = await webClient.fetchTodos();
-
-      fileStorage.saveTodos(todos);
-
-      return todos;
-    }
+  Stream<List<Todo>> todos() {
+    return _todoCollection.snapshots().map<List<Todo>>((snapshot) {
+      final res = snapshot.documents
+          .map<Todo>((doc) => Todo.fromEntity(TodoEntity.fromSnapshot(doc)))
+          .toList();
+      print(res);
+      return res;
+    });
   }
 
-  Future saveTodos(List<TodoEntity> todos) {
-    return Future.wait<dynamic>([
-      fileStorage.saveTodos(todos),
-      webClient.postTodos(todos),
-    ]);
+  Future<void> addNewTodo(Todo todo) {
+    return _todoCollection.add(todo.toEntity().toDocument());
+  }
+
+  Future<void> updateTodo(Todo update) {
+    return _todoCollection
+        .document(update.id)
+        .updateData(update.toEntity().toDocument());
+  }
+
+  Future<void> deleteTodo(Todo todo) async {
+    return _todoCollection.document(todo.id).delete();
   }
 }

@@ -14,8 +14,8 @@ class AuthRepository {
     return currentUser != null;
   }
 
-  Future<String> getUser() async {
-    return (await _firebaseAuth.currentUser()).email;
+  Future<FirebaseUser> getUser() async {
+    return _firebaseAuth.currentUser();
   }
 
   Future<FirebaseUser> signInWithGoogle() async {

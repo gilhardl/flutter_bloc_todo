@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:path_provider/path_provider.dart';
 
 import 'package:bloc_todo/ui/localization.dart';
 import 'package:bloc_todo/data/models/todo.dart';
 
-import 'package:bloc_todo/data/providers/file_storage.dart';
 import 'package:bloc_todo/data/repositories/auth_repository.dart';
 import 'package:bloc_todo/data/repositories/todos_repository.dart';
 
@@ -29,33 +27,33 @@ void main() {
   BlocSupervisor.delegate = AppBlocDelegate();
   final AuthRepository authRepository = AuthRepository();
   runApp(
-    MultiBlocProvider(
-      providers: [
-        BlocProvider(
-          create: (context) => TodosBloc(
-            todosRepository: const TodosRepository(
-              fileStorage: const FileStorage(
-                '__flutter_bloc_app__',
-                getApplicationDocumentsDirectory,
-              ),
-            ),
-          )..add(TodosLoadSuccessed()),
-        ),
-        BlocProvider(
-          create: (context) =>
-              AuthBloc(authRepository: authRepository)..add(AppStarted()),
-        ),
-      ],
-      child: BlocTodoApp(authRepository: authRepository),
+    BlocProvider(
+      create: (context) =>
+          AuthBloc(authRepository: authRepository)..add(AppStarted()),
+      child: BlocBuilder<AuthBloc, AuthState>(
+        builder: (context, state) {
+          return BlocProvider(
+              create: (context) => TodosBloc(
+                    todosRepository: TodosRepository(
+                        state is Authenticated ? state.userId : ''),
+                  )..add(TodosLoadSuccessed()),
+              child: BlocTodoApp(
+                  authState: state, authRepository: authRepository));
+        },
+      ),
     ),
   );
 }
 
 class BlocTodoApp extends StatelessWidget {
-  BlocTodoApp({@required AuthRepository authRepository})
+  BlocTodoApp(
+      {@required AuthState authState, @required AuthRepository authRepository})
       : assert(authRepository != null),
+        assert(authState != null),
+        _authState = authState,
         _authRepository = authRepository;
 
+  final AuthState _authState;
   final AuthRepository _authRepository;
 
   @override

@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "814201114142-ur822430o4jb3p9c15f6anv4dsqr58rl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "fr.gilhardl.bloc_todo",
+            "certificate_hash": "5e2a79101cfa9456129f66fba15459d4b06e7b55"
+          }
+        },
+        {
           "client_id": "814201114142-fd2dalqsvl69lrcnr6uli2el0o3f3unf.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -30,6 +38,13 @@
             {
               "client_id": "814201114142-fd2dalqsvl69lrcnr6uli2el0o3f3unf.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "814201114142-6ub0lr54bb2em1gaivjcasshd1mai0rt.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "fr.gilhardl.bloctodo"
+              }
             }
           ]
         }

@@ -21,7 +21,7 @@ class BlocTodoLocalizations {
   }
 
   String get appTitle => Intl.message(
-        'BLoC Todo',
+        'Todo',
         name: 'appTitle',
         args: [],
         locale: locale.toString(),

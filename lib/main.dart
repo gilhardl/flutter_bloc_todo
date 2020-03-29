@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:provider/provider.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:bloc_todo/l10n/localizations.dart';
@@ -26,37 +27,30 @@ import 'ui/screens/splash_screen.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
 //  BlocSupervisor.delegate = AppBlocDelegate();
-  final AuthRepository authRepository = AuthRepository();
   runApp(
-    BlocProvider(
-      create: (context) =>
-          AuthBloc(authRepository: authRepository)..add(AppStarted()),
-      child: BlocBuilder<AuthBloc, AuthState>(
-        builder: (context, state) {
-          return BlocProvider(
+    Provider(
+      create: (_) => AuthRepository(),
+      child: BlocProvider(
+        create: (context) => AuthBloc(
+            authRepository: Provider.of<AuthRepository>(context, listen: false))
+          ..add(AppStarted()),
+        child: BlocBuilder<AuthBloc, AuthState>(
+          builder: (context, state) {
+            return BlocProvider(
               create: (context) => TodosBloc(
-                    todosRepository: TodosRepository(
-                        state is Authenticated ? state.userId : ''),
-                  )..add(TodosLoadSuccessed()),
-              child: BlocTodoApp(
-                  authState: state, authRepository: authRepository));
-        },
+                todosRepository:
+                    TodosRepository(state is Authenticated ? state.userId : ''),
+              )..add(TodosLoadSuccessed()),
+              child: BlocTodoApp(),
+            );
+          },
+        ),
       ),
     ),
   );
 }
 
 class BlocTodoApp extends StatelessWidget {
-  BlocTodoApp(
-      {@required AuthState authState, @required AuthRepository authRepository})
-      : assert(authRepository != null),
-        assert(authState != null),
-        _authState = authState,
-        _authRepository = authRepository;
-
-  final AuthState _authState;
-  final AuthRepository _authRepository;
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -103,7 +97,7 @@ class BlocTodoApp extends StatelessWidget {
                 );
               }
               if (state is Unauthenticated) {
-                return LoginScreen(authRepository: _authRepository);
+                return LoginScreen();
               }
               return null;
             },

@@ -12,13 +12,6 @@ import 'package:bloc_todo/ui/widgets/login/register_button.dart';
 import 'package:bloc_todo/ui/widgets/login/login_button.dart';
 
 class LoginForm extends StatefulWidget {
-  final AuthRepository _authRepository;
-
-  LoginForm({Key key, @required AuthRepository authRepository})
-      : assert(authRepository != null),
-        _authRepository = authRepository,
-        super(key: key);
-
   State<LoginForm> createState() => _LoginFormState();
 }
 
@@ -27,8 +20,6 @@ class _LoginFormState extends State<LoginForm> {
   final TextEditingController _passwordController = TextEditingController();
 
   LoginBloc _loginBloc;
-
-  AuthRepository get _authRepository => widget._authRepository;
 
   bool get isPopulated =>
       _emailController.text.isNotEmpty && _passwordController.text.isNotEmpty;
@@ -138,7 +129,7 @@ class _LoginFormState extends State<LoginForm> {
                               : null,
                         ),
                         GoogleLoginButton(),
-                        RegisterButton(authRepository: _authRepository),
+                        RegisterButton(),
                       ],
                     ),
                   ),

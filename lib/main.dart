@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:bloc_todo/ui/localization.dart';
+import 'package:bloc_todo/l10n/localizations.dart';
 import 'package:bloc_todo/data/models/todo.dart';
 
 import 'package:bloc_todo/data/repositories/auth_repository.dart';
@@ -24,7 +25,7 @@ import 'ui/screens/splash_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  BlocSupervisor.delegate = AppBlocDelegate();
+//  BlocSupervisor.delegate = AppBlocDelegate();
   final AuthRepository authRepository = AuthRepository();
   runApp(
     BlocProvider(
@@ -59,14 +60,19 @@ class BlocTodoApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title:
-          BlocTodoLocalizations(Locale.fromSubtags(countryCode: 'en')).appTitle,
+      onGenerateTitle: (BuildContext context) =>
+          BlocTodoLocalizations.of(context).appTitle,
       theme: ThemeData.light().copyWith(
         scaffoldBackgroundColor: Color(0xFFEBEBEB),
       ),
       localizationsDelegates: [
         BlocTodoLocalizationsDelegate(),
-        BlocTodoLocalizationsDelegate(),
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+      ],
+      supportedLocales: [
+        const Locale('en'), // English
+        const Locale('fr'), // French
       ],
       routes: {
         Routes.home: (context) {

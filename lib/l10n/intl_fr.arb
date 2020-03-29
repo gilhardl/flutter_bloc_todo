@@ -1,0 +1,130 @@
+{
+  "@@last_modified": "2020-03-29T15:26:02.461838",
+  "appTitle": "Todo",
+  "@appTitle": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "todos": "Todos",
+  "@todos": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "stats": "Stats",
+  "@stats": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "showAll": "Afficher tout",
+  "@showAll": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "showActive": "Afficher à faire",
+  "@showActive": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "showCompleted": "Afficher terminés",
+  "@showCompleted": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "newTodoHint": "Qu'y a t-il à faire ?",
+  "@newTodoHint": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "markAllComplete": "Tout terminer",
+  "@markAllComplete": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "markAllIncomplete": "Tout à faire",
+  "@markAllIncomplete": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "clearCompleted": "Suppression terminée",
+  "@clearCompleted": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "addTodo": "Ajouter un todo",
+  "@addTodo": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "editTodo": "Modifier un todo",
+  "@editTodo": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "saveChanges": "Enregistrer les changements",
+  "@saveChanges": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "filterTodos": "Filtrer les Todos",
+  "@filterTodos": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "deleteTodo": "Supprimer un Todo",
+  "@deleteTodo": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "todoDetails": "Détails d'un Todo",
+  "@todoDetails": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "emptyTodoError": "Veuillez saisir une tâche",
+  "@emptyTodoError": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "notesHint": "Notes additionnelles...",
+  "@notesHint": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "completedTodos": "Todos terminés",
+  "@completedTodos": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "activeTodos": "Todos à faire",
+  "@activeTodos": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "todoDeleted": "\"{task}\" supprimé",
+  "@todoDeleted": {
+    "type": "text",
+    "placeholders": {
+      "task": {}
+    }
+  },
+  "undo": "Annuler",
+  "@undo": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "deleteTodoConfirmation": "Supprimer ce todo?",
+  "@deleteTodoConfirmation": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "delete": "Supprimer",
+  "@delete": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "cancel": "Annuler",
+  "@cancel": {
+    "type": "text",
+    "placeholders": {}
+  }
+}

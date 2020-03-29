@@ -1,0 +1,130 @@
+{
+  "@@last_modified": "2020-03-29T15:26:02.461838",
+  "appTitle": "Todo",
+  "@appTitle": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "todos": "Todos",
+  "@todos": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "stats": "Stats",
+  "@stats": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "showAll": "Show all",
+  "@showAll": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "showActive": "Show active",
+  "@showActive": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "showCompleted": "Show completed",
+  "@showCompleted": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "newTodoHint": "What needs to be done?",
+  "@newTodoHint": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "markAllComplete": "Mark all complete",
+  "@markAllComplete": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "markAllIncomplete": "Mark all incomplete",
+  "@markAllIncomplete": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "clearCompleted": "Clear completed",
+  "@clearCompleted": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "addTodo": "Add todo",
+  "@addTodo": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "editTodo": "Edit todo",
+  "@editTodo": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "saveChanges": "Save changes",
+  "@saveChanges": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "filterTodos": "Filter todos",
+  "@filterTodos": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "deleteTodo": "Delete todo",
+  "@deleteTodo": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "todoDetails": "Todo details",
+  "@todoDetails": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "emptyTodoError": "Please enter some text",
+  "@emptyTodoError": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "notesHint": "Additional notes...",
+  "@notesHint": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "completedTodos": "Completed todos",
+  "@completedTodos": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "activeTodos": "Active todos",
+  "@activeTodos": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "todoDeleted": "Deleted \"{task}\"",
+  "@todoDeleted": {
+    "type": "text",
+    "placeholders": {
+      "task": {}
+    }
+  },
+  "undo": "Undo",
+  "@undo": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "deleteTodoConfirmation": "Delete this todo?",
+  "@deleteTodoConfirmation": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "delete": "Delete",
+  "@delete": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "cancel": "Cancel",
+  "@cancel": {
+    "type": "text",
+    "placeholders": {}
+  }
+}

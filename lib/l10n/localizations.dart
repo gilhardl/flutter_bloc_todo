@@ -2,16 +2,21 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-import 'package:bloc_todo/ui/l10n/messages_all.dart';
+import 'package:bloc_todo/l10n/messages_all.dart';
 
 class BlocTodoLocalizations {
-  BlocTodoLocalizations(this.locale);
+  BlocTodoLocalizations(this.localeName);
 
-  final Locale locale;
+  final String localeName;
 
   static Future<BlocTodoLocalizations> load(Locale locale) {
-    return initializeMessages(locale.toString()).then((_) {
-      return BlocTodoLocalizations(locale);
+    final String localeName = Intl.canonicalizedLocale(
+      locale.countryCode != null && locale.countryCode.isEmpty
+          ? locale.languageCode
+          : locale.toString(),
+    );
+    return initializeMessages(localeName).then((_) {
+      return BlocTodoLocalizations(localeName);
     });
   }
 
@@ -24,175 +29,175 @@ class BlocTodoLocalizations {
         'Todo',
         name: 'appTitle',
         args: [],
-        locale: locale.toString(),
+        locale: localeName,
       );
 
   String get todos => Intl.message(
         'Todos',
         name: 'todos',
         args: [],
-        locale: locale.toString(),
+        locale: localeName,
       );
 
   String get stats => Intl.message(
         'Stats',
         name: 'stats',
         args: [],
-        locale: locale.toString(),
+        locale: localeName,
       );
 
   String get showAll => Intl.message(
-        'Show All',
+        'Show all',
         name: 'showAll',
         args: [],
-        locale: locale.toString(),
+        locale: localeName,
       );
 
   String get showActive => Intl.message(
-        'Show Active',
+        'Show active',
         name: 'showActive',
         args: [],
-        locale: locale.toString(),
+        locale: localeName,
       );
 
   String get showCompleted => Intl.message(
-        'Show Completed',
+        'Show completed',
         name: 'showCompleted',
         args: [],
-        locale: locale.toString(),
+        locale: localeName,
       );
 
   String get newTodoHint => Intl.message(
         'What needs to be done?',
         name: 'newTodoHint',
         args: [],
-        locale: locale.toString(),
+        locale: localeName,
       );
 
   String get markAllComplete => Intl.message(
         'Mark all complete',
         name: 'markAllComplete',
         args: [],
-        locale: locale.toString(),
+        locale: localeName,
       );
 
   String get markAllIncomplete => Intl.message(
         'Mark all incomplete',
         name: 'markAllIncomplete',
         args: [],
-        locale: locale.toString(),
+        locale: localeName,
       );
 
   String get clearCompleted => Intl.message(
         'Clear completed',
         name: 'clearCompleted',
         args: [],
-        locale: locale.toString(),
+        locale: localeName,
       );
 
   String get addTodo => Intl.message(
-        'Add Todo',
+        'Add todo',
         name: 'addTodo',
         args: [],
-        locale: locale.toString(),
+        locale: localeName,
       );
 
   String get editTodo => Intl.message(
-        'Edit Todo',
+        'Edit todo',
         name: 'editTodo',
         args: [],
-        locale: locale.toString(),
+        locale: localeName,
       );
 
   String get saveChanges => Intl.message(
         'Save changes',
         name: 'saveChanges',
         args: [],
-        locale: locale.toString(),
+        locale: localeName,
       );
 
   String get filterTodos => Intl.message(
-        'Filter Todos',
+        'Filter todos',
         name: 'filterTodos',
         args: [],
-        locale: locale.toString(),
+        locale: localeName,
       );
 
   String get deleteTodo => Intl.message(
-        'Delete Todo',
+        'Delete todo',
         name: 'deleteTodo',
         args: [],
-        locale: locale.toString(),
+        locale: localeName,
       );
 
   String get todoDetails => Intl.message(
-        'Todo Details',
+        'Todo details',
         name: 'todoDetails',
         args: [],
-        locale: locale.toString(),
+        locale: localeName,
       );
 
   String get emptyTodoError => Intl.message(
         'Please enter some text',
         name: 'emptyTodoError',
         args: [],
-        locale: locale.toString(),
+        locale: localeName,
       );
 
   String get notesHint => Intl.message(
-        'Additional Notes...',
+        'Additional notes...',
         name: 'notesHint',
         args: [],
-        locale: locale.toString(),
+        locale: localeName,
       );
 
   String get completedTodos => Intl.message(
-        'Completed Todos',
+        'Completed todos',
         name: 'completedTodos',
         args: [],
-        locale: locale.toString(),
+        locale: localeName,
       );
 
   String get activeTodos => Intl.message(
-        'Active Todos',
+        'Active todos',
         name: 'activeTodos',
         args: [],
-        locale: locale.toString(),
+        locale: localeName,
       );
 
   String todoDeleted(String task) => Intl.message(
         'Deleted "$task"',
         name: 'todoDeleted',
         args: [task],
-        locale: locale.toString(),
+        locale: localeName,
       );
 
   String get undo => Intl.message(
         'Undo',
         name: 'undo',
         args: [],
-        locale: locale.toString(),
+        locale: localeName,
       );
 
   String get deleteTodoConfirmation => Intl.message(
         'Delete this todo?',
         name: 'deleteTodoConfirmation',
         args: [],
-        locale: locale.toString(),
+        locale: localeName,
       );
 
   String get delete => Intl.message(
         'Delete',
         name: 'delete',
         args: [],
-        locale: locale.toString(),
+        locale: localeName,
       );
 
   String get cancel => Intl.message(
         'Cancel',
         name: 'cancel',
         args: [],
-        locale: locale.toString(),
+        locale: localeName,
       );
 }
 
@@ -206,6 +211,5 @@ class BlocTodoLocalizationsDelegate
   bool shouldReload(BlocTodoLocalizationsDelegate old) => false;
 
   @override
-  bool isSupported(Locale locale) =>
-      locale.languageCode.toLowerCase().contains("en");
+  bool isSupported(Locale locale) => ['en', 'fr'].contains(locale.languageCode);
 }

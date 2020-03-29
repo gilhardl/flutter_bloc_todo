@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:bloc_todo/ui/localization.dart';
+import 'package:bloc_todo/l10n/localizations.dart';
 import 'package:bloc_todo/data/models/todo.dart';
 
 class DeleteTodoSnackBar extends SnackBar {

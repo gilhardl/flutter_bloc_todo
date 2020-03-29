@@ -17,11 +17,9 @@ class TodosRepository {
 
   Stream<List<Todo>> todos() {
     return _todoCollection.snapshots().map<List<Todo>>((snapshot) {
-      final res = snapshot.documents
+      return snapshot.documents
           .map<Todo>((doc) => Todo.fromEntity(TodoEntity.fromSnapshot(doc)))
           .toList();
-      print(res);
-      return res;
     });
   }
 

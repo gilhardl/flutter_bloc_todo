@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'package:bloc_todo/l10n/localizations.dart';
 import 'package:bloc_todo/data/repositories/auth_repository.dart';
 
 import 'package:bloc_todo/logic/blocs/auth.dart';
@@ -48,19 +49,6 @@ class _LoginFormState extends State<LoginForm> {
   Widget build(BuildContext context) {
     return BlocListener<LoginBloc, LoginState>(
       listener: (context, state) {
-        if (state.isFailure) {
-          Scaffold.of(context)
-            ..hideCurrentSnackBar()
-            ..showSnackBar(
-              SnackBar(
-                content: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [Text('Login Failure'), Icon(Icons.error)],
-                ),
-                backgroundColor: Colors.red,
-              ),
-            );
-        }
         if (state.isLoading) {
           Scaffold.of(context)
             ..hideCurrentSnackBar()
@@ -69,7 +57,7 @@ class _LoginFormState extends State<LoginForm> {
                 content: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('Logging In...'),
+                    Text(BlocTodoLocalizations.of(context).loginLoading),
                     CircularProgressIndicator(),
                   ],
                 ),
@@ -78,6 +66,22 @@ class _LoginFormState extends State<LoginForm> {
         }
         if (state.isSuccess) {
           BlocProvider.of<AuthBloc>(context).add(LoggedIn());
+        }
+        if (state.isFailure) {
+          Scaffold.of(context)
+            ..hideCurrentSnackBar()
+            ..showSnackBar(
+              SnackBar(
+                content: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(BlocTodoLocalizations.of(context).loginFailure),
+                    Icon(Icons.error)
+                  ],
+                ),
+                backgroundColor: Colors.red,
+              ),
+            );
         }
       },
       child: BlocBuilder<LoginBloc, LoginState>(
@@ -95,26 +99,32 @@ class _LoginFormState extends State<LoginForm> {
                     controller: _emailController,
                     decoration: InputDecoration(
                       icon: Icon(Icons.email),
-                      labelText: 'Email',
+                      labelText:
+                          BlocTodoLocalizations.of(context).emailFieldLabel,
                     ),
                     keyboardType: TextInputType.emailAddress,
                     autovalidate: true,
                     autocorrect: false,
                     validator: (_) {
-                      return !state.isEmailValid ? 'Invalid Email' : null;
+                      return !state.isEmailValid
+                          ? BlocTodoLocalizations.of(context).emailFieldError
+                          : null;
                     },
                   ),
                   TextFormField(
                     controller: _passwordController,
                     decoration: InputDecoration(
                       icon: Icon(Icons.lock),
-                      labelText: 'Password',
+                      labelText:
+                          BlocTodoLocalizations.of(context).passwordFieldLabel,
                     ),
                     obscureText: true,
                     autovalidate: true,
                     autocorrect: false,
                     validator: (_) {
-                      return !state.isPasswordValid ? 'Invalid Password' : null;
+                      return !state.isPasswordValid
+                          ? BlocTodoLocalizations.of(context).passwordFieldError
+                          : null;
                     },
                   ),
                   Padding(

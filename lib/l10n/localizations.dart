@@ -46,6 +46,83 @@ class BlocTodoLocalizations {
         locale: localeName,
       );
 
+  String get login => Intl.message(
+        'Sign in',
+        name: 'login',
+        args: [],
+        locale: localeName,
+      );
+
+  String get loginLoading => Intl.message(
+        'Logging in...',
+        name: 'loginLoading',
+        args: [],
+        locale: localeName,
+      );
+
+  String get loginFailure => Intl.message(
+        'Login failure',
+        name: 'loginFailure',
+        args: [],
+        locale: localeName,
+      );
+
+  String get register => Intl.message(
+        'Create an account',
+        name: 'register',
+        args: [],
+        locale: localeName,
+      );
+
+  String get registerLoading => Intl.message(
+        'Registering...',
+        name: 'registerLoading',
+        args: [],
+        locale: localeName,
+      );
+
+  String get registerFailure => Intl.message(
+        'Registration Failure',
+        name: 'registerFailure',
+        args: [],
+        locale: localeName,
+      );
+
+  String get emailFieldLabel => Intl.message(
+        'Email',
+        name: 'emailFieldLabel',
+        args: [],
+        locale: localeName,
+      );
+
+  String get emailFieldError => Intl.message(
+        'Invalid email',
+        name: 'emailFieldError',
+        args: [],
+        locale: localeName,
+      );
+
+  String get passwordFieldLabel => Intl.message(
+        'Password',
+        name: 'passwordFieldLabel',
+        args: [],
+        locale: localeName,
+      );
+
+  String get passwordFieldError => Intl.message(
+        'Invalid password',
+        name: 'passwordFieldError',
+        args: [],
+        locale: localeName,
+      );
+
+  String get loginWithGoogle => Intl.message(
+        'Sign in with Google',
+        name: 'loginWithGoogle',
+        args: [],
+        locale: localeName,
+      );
+
   String get showAll => Intl.message(
         'Show all',
         name: 'showAll',

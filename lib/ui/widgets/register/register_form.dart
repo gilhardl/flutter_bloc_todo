@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'package:bloc_todo/l10n/localizations.dart';
 import 'package:bloc_todo/logic/blocs/auth.dart';
 import 'package:bloc_todo/logic/blocs/register.dart';
 
@@ -43,7 +44,7 @@ class _RegisterFormState extends State<RegisterForm> {
                 content: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('Registering...'),
+                    Text(BlocTodoLocalizations.of(context).registerLoading),
                     CircularProgressIndicator(),
                   ],
                 ),
@@ -62,7 +63,7 @@ class _RegisterFormState extends State<RegisterForm> {
                 content: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('Registration Failure'),
+                    Text(BlocTodoLocalizations.of(context).registerFailure),
                     Icon(Icons.error),
                   ],
                 ),
@@ -82,26 +83,32 @@ class _RegisterFormState extends State<RegisterForm> {
                     controller: _emailController,
                     decoration: InputDecoration(
                       icon: Icon(Icons.email),
-                      labelText: 'Email',
+                      labelText:
+                          BlocTodoLocalizations.of(context).emailFieldLabel,
                     ),
                     keyboardType: TextInputType.emailAddress,
                     autocorrect: false,
                     autovalidate: true,
                     validator: (_) {
-                      return !state.isEmailValid ? 'Invalid Email' : null;
+                      return !state.isEmailValid
+                          ? BlocTodoLocalizations.of(context).emailFieldError
+                          : null;
                     },
                   ),
                   TextFormField(
                     controller: _passwordController,
                     decoration: InputDecoration(
                       icon: Icon(Icons.lock),
-                      labelText: 'Password',
+                      labelText:
+                          BlocTodoLocalizations.of(context).passwordFieldLabel,
                     ),
                     obscureText: true,
                     autocorrect: false,
                     autovalidate: true,
                     validator: (_) {
-                      return !state.isPasswordValid ? 'Invalid Password' : null;
+                      return !state.isPasswordValid
+                          ? BlocTodoLocalizations.of(context).passwordFieldError
+                          : null;
                     },
                   ),
                   RegisterButton(

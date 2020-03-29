@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'package:bloc_todo/l10n/localizations.dart';
 import 'package:bloc_todo/data/repositories/auth_repository.dart';
 import 'package:bloc_todo/logic/blocs/register/register_bloc.dart';
 
@@ -17,7 +18,7 @@ class RegisterScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Register')),
+      appBar: AppBar(title: Text(BlocTodoLocalizations.of(context).register)),
       body: Center(
         child: BlocProvider<RegisterBloc>(
           create: (context) => RegisterBloc(authRepository: _authRepository),

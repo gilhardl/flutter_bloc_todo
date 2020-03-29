@@ -15,6 +15,61 @@
     "type": "text",
     "placeholders": {}
   },
+  "loginWithGoogle": "Connexion avec Google",
+  "@loginWithGoogle": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "login": "Connexion",
+  "@login": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "loginLoading": "Connexion en cours...",
+  "@loginLoading": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "loginFailure": "Erreur de connexion",
+  "@loginFailure": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "register": "Créer un compte",
+  "@register": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "registerLoading": "Création du compte...",
+  "@registerLoading": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "registerFailure": "Erreur de création du compte",
+  "@registerFailure": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "emailFieldLabel": "Email",
+  "@emailFieldLabel": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "emailFieldError": "Email non valide",
+  "@emailFieldError": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "passwordFieldLabel": "Mot de passe",
+  "@passwordFieldLabel": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "passwordFieldError": "Mot de passe non valide",
+  "@passwordFieldError": {
+    "type": "text",
+    "placeholders": {}
+  },
   "showAll": "Afficher tout",
   "@showAll": {
     "type": "text",
